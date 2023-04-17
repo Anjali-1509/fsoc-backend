@@ -24,6 +24,11 @@ mongoose.connect(process.env.MONGO_URL)
 .then(()=>console.log("mongoDB is connected"))
 .catch((err)=>console.log(err))
 
+app.get("/" , (req,res)=>{ 
+res.setHeader("Access-Control-Allow-Credentials", "true")
+ res.send("API is running...")
+})
+
 app.use("/", route)
 app.use("/category", categoryRoute)
 app.use("/product", productRoutes)
