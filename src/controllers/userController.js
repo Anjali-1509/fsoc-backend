@@ -3,6 +3,9 @@ const userModel = require("../models/userSchema")
 const mongoose = require("mongoose")
 let jwt = require("jsonwebtoken")
 const bcrypt = require("bcrypt")
+const dotenv = require("dotenv")
+
+dotenv.config()
 
 exports.createUser = async(req, res)=>{
   try{
